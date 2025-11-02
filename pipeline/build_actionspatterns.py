@@ -5,7 +5,7 @@ def action_pattern_as_columns(encoded_rows, max_patterns=3):
     Chaque combinaison (action + patterns) devient une colonne unique.
     Cellule = fréquence d'apparition dans la session.
     """
-    # 1️⃣ collecter toutes les combinaisons uniques
+    # collecter toutes les combinaisons uniques
     all_combinations = set()
     for row in encoded_rows:
         for lst in row["actions_patterns"]:
@@ -14,7 +14,7 @@ def action_pattern_as_columns(encoded_rows, max_patterns=3):
             all_combinations.add( tuple([lst[0]] + patterns) )
     all_combinations = sorted(all_combinations)
 
-    # 2️⃣ créer le DataFrame
+    # créer le DataFrame
     data = []
     for row in encoded_rows:
         row_dict = {"user": row["user"], "navigateur": row["navigateur"]}
