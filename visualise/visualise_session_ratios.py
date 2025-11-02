@@ -86,7 +86,7 @@ def compute_session_ratios(df):
             elif val.strip() != "" and val.lower() != "nan":
                 action_count += 1
 
-        ratio = action_count / tmax if tmax > 0 else 0
+        ratio = tmax / action_count if action_count > 0 else 0
 
         results.append({
             "session_id": idx + 1,
