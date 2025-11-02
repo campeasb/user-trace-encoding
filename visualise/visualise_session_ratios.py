@@ -98,7 +98,8 @@ def compute_session_ratios(df):
         })
 
     df_sessions = pd.DataFrame(results)
+    df_sessions = df_sessions.sort_values(by='total_actions')
 
     # Affichage du tableau complet
-    print(df_sessions.head(20))  # afficher les 20 premières lignes pour contrôle
+    print(df_sessions.head())  # afficher les 20 premières lignes pour contrôle
     return df_sessions    
