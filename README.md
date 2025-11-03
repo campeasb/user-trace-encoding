@@ -28,6 +28,14 @@ Project/
 │   ├── build_encoded_data.py     # Tokenize sessions
 │   └── build_actionspatterns.py  # Transform to feature matrix
 │
+├── pipeline_transformer/
+│   ├── parser.py                   # Parse a raw action into a structured form 
+│   ├── reader.py                   # Robust CSV reading 
+│   ├── time_features.py            # Compute and bucketize temporal features (duration, speed)
+│   ├── tokenizer.py                # Tokenize actions/browsers/users
+│   ├── transformer_unicontext.py   # Transformer with a single context (browser)
+│   └── transformer_multicontext.py # Transformer with multiple contexts (browser, duration, speed)
+│
 ├── visualise/
 │   ├── visualise_actions.py           # Action filtering utilities
 │   ├── visualise_patterns.py          # Pattern analysis
@@ -41,9 +49,9 @@ Project/
 └── Data_Analysis_Report.ipynb  # Main analysis report (see below)
 ```
 
-## Main Report
+## First Model Report
 
-**`Data_Analysis_Report.ipynb`** contains the complete analysis report. This Jupyter notebook includes:
+**`Data_Analysis_Report.ipynb`** contains the complete analysis report for the first model (XGBoost). This Jupyter notebook includes:
 
 - **Data exploration**: Browser distribution, temporal patterns, action structure
 - **Feature engineering**: Extraction of actions, patterns, and their combinations
@@ -52,6 +60,10 @@ Project/
 - **Results**: Model evaluation and predictions
 
 The notebook serves as both the methodology documentation and the execution pipeline for reproducing the analysis.
+
+## Advanced Model Report
+
+**`Report_2_Transformer.ipynb`** contains the training report for the second advanced model (Transformer). 
 
 ## Data Description
 
